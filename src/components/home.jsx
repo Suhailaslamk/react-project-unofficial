@@ -13,7 +13,7 @@ export default function Home() {
 
        
 <div className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Video background */}
+      
       <video
         autoPlay
         muted
@@ -28,10 +28,10 @@ export default function Home() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Optional dark overlay for contrast */}
+      
       <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Foreground content over video */}
+      
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
         <h1 className="text-6xl md:text-8xl font-[Cinzel] tracking-[0.3em] mb-4">
           DAOR

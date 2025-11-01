@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from '../../context/authcontext';
+
 
 
 export default function Signup() {
@@ -11,10 +12,9 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [localError, setLocalError] = useState("");
 
-  const { signup, error } = useAuth();
+  const { signup, error,user } = useAuth();
   const navigate = useNavigate();
     
-
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -36,11 +36,15 @@ setLocalError("");
     if (success) navigate("/login");
   };
 
-  
+   
+  useEffect(()=> {
+    if(user)
+      navigate('/')
+  },[user,navigate])
 
 
    return (
-    <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4 mt-16">
+    <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4  ">
         <motion.div
         initial={{opacity: 0, y: 40}}
         animate={{opacity: 1, y: 0}}
@@ -54,21 +58,8 @@ setLocalError("");
           <h2 className="text-5xl text-center font-[Cinzel] tracking-[0.3em] text-slate-100 mb-8">
           Daor
         </h2> 
-
-
-
-        
-
-
-
-
          <form onSubmit={handleSignup} className="space-y-6">
            
-
-
-
-
-
            <div>
             <label className="block text-slate-300 text-sm mb-2">Full Name</label>
             <input 
@@ -80,7 +71,7 @@ setLocalError("");
             </div>
 
 
-          {/* Email */}
+          
           <div>
             <label className="block text-slate-300 text-sm mb-2">Email</label>
             <input
@@ -91,7 +82,7 @@ setLocalError("");
             />
             </div>
 
- {/* Password */}
+ 
 
 <div>
     <label  className="block text-slate-300 text-sm mb-2" >Password</label>
@@ -103,7 +94,7 @@ setLocalError("");
     className="w-full px-4 py-3 bg-gray-800 text-slate-100 rounded-lg focus:outline-none border border-gray-700 focus:border-slate-400 transition-all duration-300" />
 </div>
 
-{/* Confirm Password */}
+
 
 
 
@@ -120,7 +111,7 @@ setLocalError("");
             />
           </div>
 
-{/* Error message */}
+
           {(localError || error) && (
             <p className="text-red-400 text-sm text-center">{localError || error}</p>
           )}
@@ -129,19 +120,27 @@ setLocalError("");
 
 
 
-{/* Submit Button */}
+
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             type="submit"
             className="w-full mt-4 bg-white text-gray-900 py-3 rounded-full font-semibold tracking-wide hover:bg-slate-100 transition-colors duration-300"
-          >
+          onClick={()=> {
+            if (!username || !email || !password || !confirmPassword) {
+                  setLocalError("All fields are required.")
+                return }else{
+  navigate('/login')}}
+                }
+          
+            
+               >
             Sign Up
           </motion.button>
         </form>
 
 
-         {/* Footer */}
+         
         <div className="text-center mt-6 text-slate-400 text-sm">
           <p>
             Already have an account?{" "}

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { NavLink,useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/authcontext";
@@ -14,13 +14,15 @@ import { useAuth } from "../../context/authcontext";
    const [password, setPassword] = useState("");
   const [localError, setLocalError] = useState("");
     
-   const { login, error } = useAuth();
+   const { login, error,user } = useAuth();
 const navigate = useNavigate();
 
   
   
 const handleLogin = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
+  setLocalError("")
+    
    
 
  if (!email || !password) {
@@ -29,14 +31,26 @@ const handleLogin = async (e) => {
     }
 
     const success = await login(email, password);
-    if (success) {
-      navigate("/"); // Redirect to homepage or dashboard
+    if (success && user) {
+      if(user.role === "admin"){
+      navigate("/admin"); 
     } else {
-      setLocalError("Invalid email or password.");
+      navigate('/');
+    }
+  }else{
+      setLocalError("Invalid email or password.")
     }
   };
 
-
+   useEffect(()=> {
+  if(user){
+    if(user.role === "admin"){
+       navigate("/admin");
+    }else{
+       navigate("/");
+    }
+  }
+},[user,navigate])
 
 
 
@@ -53,20 +67,20 @@ const handleLogin = async (e) => {
 
 
 
-           {/* Brand Logo */}
+          
 
 
 <h2 className="text-5xl text-center font-[Cinzel] tracking-[0.3em] text-slate-100 mb-8">
           Daor
         </h2>
 
-        {/* Login Form */}
+        
 
 
        <form onSubmit={handleLogin} className="space-y-6">
 
 
-         {/* Email */}
+         
 
 
        <div>
@@ -81,7 +95,7 @@ const handleLogin = async (e) => {
             />
        </div>
 
-       {/* password*/}
+       
        <div> 
        <label className="block text-slate-300 text-sm mb-2">Password</label>
        <input 
@@ -94,7 +108,7 @@ const handleLogin = async (e) => {
 </div>
 
 
-       {/* Error Message */}
+       
           {(localError || error) && (
             <p className="text-red-400 text-sm text-center">
               {localError || error}
@@ -103,7 +117,7 @@ const handleLogin = async (e) => {
 
        
 
-          {/* Submit Button */}
+        
 
 
 
@@ -119,7 +133,7 @@ const handleLogin = async (e) => {
         
         
         
-        {/* links */}
+        
 
         <div className="text-center mt-6 text-slate-400 text-sm space-y-2">
           <p>

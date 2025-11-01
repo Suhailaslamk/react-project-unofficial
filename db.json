@@ -1,24 +1,81 @@
 {
   "cart": [],
   "wishlist": [],
+  "orders": [
+    {
+      "id": "o2",
+      "userId": "3c0f",
+      "productId": "11",
+      "name": "Radar",
+      "price": 299,
+      "quantity": 4,
+      "date": "2025-10-14T12:30:00.000Z",
+      "status": "Delivered"
+    },
+    {
+      "id": "ff08",
+      "productId": "4",
+      "name": "Wayfarer",
+      "price": 219,
+      "quantity": 1,
+      "date": "2025-10-15T09:17:27.862Z",
+      "status": "Shipped"
+    },
+    {
+      "id": "1eac",
+      "productId": "11",
+      "name": "Radar",
+      "price": 299,
+      "quantity": 1,
+      "date": "2025-10-22T11:23:24.745Z"
+    }
+  ],
   "users": [
     {
       "id": "3c0f",
       "username": "suhail aslam",
       "email": "suhailaslam81@gmail.com",
-      "password": "suhail2004"
+      "password": "suhail2004",
+      "role": "admin",
+      "isBlocked": false
     },
     {
       "id": "7384",
       "username": "gggggg",
       "email": "nihhallaslamm@gmail.com",
-      "password": "suhail2004"
+      "password": "suhail2004",
+      "isBlocked": false,
+      "role": "user"
     },
     {
       "id": "0179",
       "username": "Mohammed Ihsan",
       "email": "mdihsan0010@gmail.com",
-      "password": "1627"
+      "password": "1627",
+      "isBlocked": false,
+      "role": "user"
+    },
+    {
+      "id": "07ef",
+      "username": "suhail",
+      "email": "suhail@gmail.com",
+      "password": "asdfASDF",
+      "isBlocked": false,
+      "role": "user"
+    },
+    {
+      "id": "65b2",
+      "username": "suhail aslam",
+      "email": "suhailaslam1@gmail.com",
+      "password": "suhail44",
+      "isBlocked": false,
+      "role": "user"
+    },
+    {
+      "id": "3f51",
+      "username": "nihal",
+      "email": "nihaalaslam@gmail.com",
+      "password": "2004"
     }
   ],
   "products": [
@@ -26,8 +83,8 @@
       "id": "1",
       "name": "Rayverse",
       "price": 299,
-      "stock": 0,
-      "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRC02/E16KFE08Z/SPRC02_E16K_FE08Z_C_057_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
+      "stock": "7",
+      "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRC02/E16KFE08Z/SPRC02_E16K_FE08Z_C_057_MDL.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
       "category": "Prada",
       "category1": "Premium"
     },
@@ -35,19 +92,19 @@
       "id": "2",
       "name": "Ray-Ban",
       "price": 297,
-      "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRC02/E16KFE08Z/SPRC02_E16K_FE08Z_C_057_MDL.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
+      "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRC02/E16KFE08Z/SPRC02_E16K_FE08Z_C_057_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
       "category": "Prada",
       "category1": "Premium",
-      "stock": null
+      "stock": 7
     },
     {
       "id": "3",
       "name": "Aviator",
       "price": 199,
-      "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRB19/E24FFE80S/SPRB19_E24F_FE80S_C_052_SLR.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
+      "image":"https://static.zara.net/assets/public/bde5/902b/8d7b4c478d6b/9b25dd7a18d8/02750309800-a2/02750309800-a2.jpg?ts=1759136064437&w=1125",
       "category": "Prada",
       "category1": "Premium",
-      "stock": 4
+      "stock": 6
     },
     {
       "id": "4",
@@ -56,14 +113,14 @@
       "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRA16/E16KFE731/SPRA16_E16K_FE731_C_049_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
       "category": "Prada",
       "category1": "Premium",
-      "stock": 4
+      "stock": 6
     },
     {
       "id": "5",
       "name": "Clubmaster",
       "price": 299,
-      "stock": 4,
-      "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPS/SPSB06/M16XFE20A/SPSB06_M16X_FE20A_C_040_MDL.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
+      "stock": 9,
+      "image": "https://img.tatacliq.com/images/i24//658Wx734H/MP000000025963517_658Wx734H_202505120317313.jpeg",
       "category": "Prada",
       "category1": "Premium"
     },
@@ -72,7 +129,7 @@
       "name": "Round Metal",
       "price": 299,
       "stock": null,
-      "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPS/SPSB06/M1BOFE08R/SPSB06_M1BO_FE08R_C_040_MDL.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
+      "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRB19/E24FFE80S/SPRB19_E24F_FE80S_C_052_SLR.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
       "category": "Prada",
       "category1": "Premium"
     },
@@ -89,7 +146,7 @@
       "id": "8",
       "name": "Erika",
       "price": 299,
-      "stock": 2,
+      "stock": 6,
       "image": "https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-pure-low-square-sunglasses--Z2911U_PM1_Worn%20view.png?wid=1090&hei=1090",
       "category": "Louis Vuitton",
       "category1": "Premium"
@@ -98,7 +155,7 @@
       "id": "9",
       "name": "Holbrook",
       "price": 299,
-      "stock": 10,
+      "stock": 9,
       "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRC02/E10JFE80Q/SPRC02_E10J_FE80Q_C_057_SLR.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
       "category": "Prada",
       "category1": "Premium"
@@ -107,7 +164,7 @@
       "id": "10",
       "name": "Frogskins",
       "price": 299,
-      "stock": 0,
+      "stock": 6,
       "image": "https://static.zara.net/assets/public/1365/d4f4/ba174e4d8d57/b72f2652c3fa/02750300808-a1/02750300808-a1.jpg?ts=1752751271545&w=1024",
       "hover": "https://static.zara.net/assets/public/e6d6/0799/87144b42bdf8/d686b6686f77/02750300808-a2/02750300808-a2.jpg?ts=1752751271941&w=1125",
       "category": "sunglass",
@@ -117,7 +174,7 @@
       "id": "11",
       "name": "Radar",
       "price": 299,
-      "stock": 6,
+      "stock": 5,
       "image": "https://static.zara.net/assets/public/5733/c2b8/c8a34119adc3/4054551d1e2c/02750309800-a1/02750309800-a1.jpg?ts=1759136064708&w=1024",
       "hover": "https://static.zara.net/assets/public/bde5/902b/8d7b4c478d6b/9b25dd7a18d8/02750309800-a2/02750309800-a2.jpg?ts=1759136064437&w=1125",
       "category": "sunglass",
@@ -127,10 +184,10 @@
       "id": "12",
       "name": "Flak 2.0",
       "price": 299,
-      "stock": 2,
+      "stock": 8,
       "image": "https://static.zara.net/assets/public/fc4b/a424/e9d641ac8a98/354b498580f1/02741400800-a1/02741400800-a1.jpg?ts=1758188923269&w=1024",
       "hover": "https://static.zara.net/assets/public/74f0/73af/95c94921b407/2b84ef7a9bfe/02741400800-a2/02741400800-a2.jpg?ts=1758188923211&w=1125",
-      "category": "sunglass",
+      "category": "Louis Vuitton",
       "category1": "Premium"
     },
     {
@@ -140,17 +197,17 @@
       "stock": 9,
       "image": "https://static.zara.net/assets/public/e6ed/06ba/aa4d44a9b8be/b1d71fec1964/02750401800-a1/02750401800-a1.jpg?ts=1754410823665&w=1024",
       "hover": "https://static.zara.net/assets/public/4a54/97ab/e79a498a961b/66172e0b679c/02750401800-a2/02750401800-a2.jpg?ts=1754410823732&w=1125",
-      "category": "sunglass",
+      "category": "Tommy Hilfigher",
       "category1": "Premium"
     },
     {
       "id": "14",
       "name": "Persol 714",
       "price": 299,
-      "stock": 5,
+      "stock": 8,
       "image": "https://static.zara.net/assets/public/e018/7868/b1394fc1ba7e/895861387908/02750313760-000-a1/02750313760-000-a1.jpg?ts=1757927623967&w=1024",
       "hover": "https://static.zara.net/assets/public/33b2/68e7/1233442fa4df/5df1981d067c/02750313760-000-a2/02750313760-000-a2.jpg?ts=1757927623981&w=1125",
-      "category": "sunglass",
+      "category": "Louis Vuitton",
       "category1": "Premium"
     },
     {
@@ -167,7 +224,7 @@
       "id": "16",
       "name": "cCarrera ",
       "price": 299,
-      "stock": 7,
+      "stock": 6,
       "image": "https://static.zara.net/assets/public/39a8/f803/ccd14743b884/40483ffb487b/02741401800-a1/02741401800-a1.jpg?ts=1756220611022&w=1024",
       "category": "Prada",
       "category1": "Premium"
@@ -176,7 +233,7 @@
       "id": "17",
       "name": "Champion",
       "price": 299,
-      "stock": 7,
+      "stock": 10,
       "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRA16/E17NFE731/SPRA16_E17N_FE731_C_049_MDL.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
       "category": "Prada"
     },
@@ -193,13 +250,14 @@
       "name": "Gucci GG0061S",
       "price": 299,
       "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRC55/E28CFE08Z/SPRC55_E28C_FE08Z_C_058_MDL.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
-      "category": "Tommy Hilfigher"
+      "category": "Tommy Hilfigher",
+      "stock": "5"
     },
     {
       "id": "20",
       "name": "Costa Del Mar",
       "price": 299,
-      "stock": 4,
+      "stock": 8,
       "image": "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRB54/E5AKFE50P/SPRB54_E5AK_FE50P_C_054_MDL.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
       "category": "Tommy Hilfigher"
     },
@@ -207,7 +265,7 @@
       "id": "21",
       "name": "Lv match ",
       "price": 299,
-      "stock": 4,
+      "stock": 3,
       "image": "https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-match-sunglasses--Z1414W_PM1_Cropped%20worn%20view.png?wid=1090&hei=1090",
       "category": "Tommy Hilfigher",
       "category1": "Premium"
@@ -225,7 +283,7 @@
       "id": "23",
       "name": "Flying Eyes Optics",
       "price": 299,
-      "stock": 4,
+      "stock": 6,
       "image": "https://www.prada.com/content/dam/pradanux_products/S/SPR/SPR06Y/E09QF05S0/SPR06Y_E09Q_F05S0_C_053_MDL.png/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
       "category": "Tommy Hilfigher",
       "category1": "Premium"
@@ -268,7 +326,7 @@
       "id": "28",
       "name": "Crystal Ochre Lenses",
       "price": 299,
-      "stock": 4,
+      "stock": 6,
       "image": "https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-glide-sunglasses--Z1692E_PM1_Other%20view4.png?wid=1090&hei=1090",
       "category": "Louis Vuitton"
     },
@@ -276,7 +334,7 @@
       "id": "29",
       "name": "Dark Chrome Lenses",
       "price": 299,
-      "stock": 4,
+      "stock": 6,
       "image": "https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-glide-sunglasses--Z1692E_PM1_Cropped%20worn%20view.png?wid=1090&hei=1090",
       "category": "Louis Vuitton"
     },
@@ -300,7 +358,7 @@
       "id": "32",
       "name": "Saint Laurent",
       "price": 299,
-      "stock": 4,
+      "stock": 6,
       "image": "https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-clash-large-square-sunglasses--Z2707W_PM1_Cropped%20worn%20view.png?wid=1090&hei=1090",
       "category": "Louis Vuitton"
     },
@@ -308,7 +366,7 @@
       "id": "33",
       "name": "Cartier",
       "price": 299,
-      "stock": 4,
+      "stock": "5",
       "image": "https://static.zara.net/assets/public/0781/0d54/bba444eaa906/024f83ff89a6/02750418851-a2/02750418851-a2.jpg?ts=1758188940751&w=1125",
       "category": "Louis Vuitton"
     }
